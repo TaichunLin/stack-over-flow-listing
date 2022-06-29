@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/stack-over-flow-listing/static/css/main.8b3ee952.css",
+    "main.js": "/stack-over-flow-listing/static/js/main.8f01ca70.js",
+    "index.html": "/stack-over-flow-listing/index.html",
+    "main.8b3ee952.css.map": "/stack-over-flow-listing/static/css/main.8b3ee952.css.map",
+    "main.8f01ca70.js.map": "/stack-over-flow-listing/static/js/main.8f01ca70.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b3ee952.css",
+    "static/js/main.8f01ca70.js"
+  ]
+}
