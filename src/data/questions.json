@@ -1,0 +1,135 @@
+{
+  "questions":{
+  "items": [
+    {
+      "tags": [
+        "python",
+        "screen-scraping",
+        "local-files"
+      ],
+      "owner": {
+        "account_id": 25653068,
+        "reputation": 1,
+        "user_id": 19420019,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/722e8da4551bf840e6caa53f40c365b6?s=256&d=identicon&r=PG",
+        "display_name": "user19420019",
+        "link": "https://stackoverflow.com/users/19420019/user19420019"
+      },
+      "is_answered": false,
+      "view_count": 18,
+      "answer_count": 2,
+      "score": -1,
+      "last_activity_date": 1656385352,
+      "creation_date": 1656264694,
+      "last_edit_date": 1656385352,
+      "question_id": 72763815,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/72763815/scrape-through-multiple-local-html-files-in-one-directory",
+      "title": "Scrape through multiple local html files in one directory"
+    },
+    {
+      "tags": [
+        "python"
+      ],
+      "owner": {
+        "account_id": 25666205,
+        "reputation": 1,
+        "user_id": 19431126,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GjX2t1dWIlfakPpi3d24YXNA_HYV3jQ4mQ3yz02=k-s256",
+        "display_name": "Xiaotong Liu",
+        "link": "https://stackoverflow.com/users/19431126/xiaotong-liu"
+      },
+      "is_answered": false,
+      "view_count": 7,
+      "answer_count": 0,
+      "score": -1,
+      "last_activity_date": 1656385228,
+      "creation_date": 1656385228,
+      "question_id": 72780299,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/72780299/how-to-consider-correlations-between-multidimensional-variables-in-latin-hypercu",
+      "title": "How to consider correlations between multidimensional variables in Latin Hypercube Sampling in Python?"
+    },
+    {
+      "tags": [
+        "python",
+        "django"
+      ],
+      "owner": {
+        "account_id": 15834097,
+        "reputation": 3,
+        "user_id": 11448846,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/0hUoK.jpg?s=256&g=1",
+        "display_name": "Abunagy",
+        "link": "https://stackoverflow.com/users/11448846/abunagy"
+      },
+      "is_answered": false,
+      "view_count": 18,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1656385413,
+      "creation_date": 1656383449,
+      "last_edit_date": 1656385413,
+      "question_id": 72780133,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/72780133/part-a-custom-user-model-into-two-apps-but-custom-user-model-app-override-the-2",
+      "title": "part a custom user model into two apps, but custom user model app override the 2nd app"
+    },
+    {
+      "tags": [
+        "python",
+        "scipy"
+      ],
+      "owner": {
+        "account_id": 21812641,
+        "reputation": 1,
+        "user_id": 19417138,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AOh14Gjx3n2jjNoSCO69hlNcxddSxa4iHDWPDBFwVWFD_vc=k-s256",
+        "display_name": "Esteban Gonz&#225;lez",
+        "link": "https://stackoverflow.com/users/19417138/esteban-gonz%c3%a1lez"
+      },
+      "is_answered": false,
+      "view_count": 4,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1656385118,
+      "creation_date": 1656385118,
+      "question_id": 72780283,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/72780283/how-do-i-import-special-elliprj-and-special-elliprf-from-scipy",
+      "title": "How do I import special.elliprj and special.elliprf from SciPy?"
+    },
+    {
+      "tags": [
+        "python",
+        "python-3.x",
+        "syntax"
+      ],
+      "owner": {
+        "account_id": 16900177,
+        "reputation": 1,
+        "user_id": 12221774,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/c664552a82f1f3fa9bac15a51e521250?s=256&d=identicon&r=PG&f=1",
+        "display_name": "XT_boost",
+        "link": "https://stackoverflow.com/users/12221774/xt-boost"
+      },
+      "is_answered": false,
+      "view_count": 14,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1656385109,
+      "creation_date": 1656382447,
+      "question_id": 72780047,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/72780047/what-is-the-meaning-of-the-optional-argument-in-the-function-definatioln",
+      "title": "what is the meaning of the optional argument in the function definatioln"
+    }
+  ],
+  "has_more": true
+}
+}

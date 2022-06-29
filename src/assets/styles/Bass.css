@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400&display=swap");
+html {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 12.6px;
+  }
+}
+
+body {
+  font-family: "Noto Sans TC";
+  font-size: 1em;
+}
+
+#root {
+  height: 100%;
+}
+
+#root .ant-layout {
+  min-height: 100%;
+}
+
+h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 2.571em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.714em;
+}
+
+h5 {
+  font-size: 1.429em;
+}
+
+h6 {
+  font-size: 1.286em;
+}
+
+.newVersion {
+  font-size: 14px;
+}
+
+.newVersion h1 {
+  font-size: 3.43em;
+}
+
+.newVersion h2 {
+  font-size: 2.571em;
+}
+
+.newVersion h3 {
+  font-size: 2.143em;
+}
+
+.newVersion h4 {
+  font-size: 1.714em;
+}
+
+.newVersion h5 {
+  font-size: 1.429em;
+}
+
+.newVersion h6 {
+  font-size: 1.286em;
+}
+
+.newVersion .p-1 {
+  font-size: 1.286em;
+}
+
+.newVersion .p-2 {
+  font-size: 1.143em;
+}
+
+.newVersion .caption-1 {
+  font-size: 1em;
+}
+
+.newVersion .caption-2 {
+  font-size: 0.857em;
+}
+
+.color-none {
+  color: #fff;
+}
+
+.color-grey {
+  color: #919191;
+}
+
+.color-green {
+  color: #5c892d;
+}
+
+.color-red {
+  color: #e24242;
+}
+
+.color-black {
+  color: #333;
+}
+
+.color-darkGray {
+  color: #AFAFAF;
+}
+
+.color-gray {
+  color: #E3E3E3;
+}
+
+.color-lightGray {
+  color: #F9F9F9;
+}
+
+.color-yellow {
+  color: #FFD040;
+}
+
+.trendingTags_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.trendingTags_card {
+  width: 20%;
+  border-right: 0.1rem solid rgba(58, 58, 58, 0.548);
+}
+/*# sourceMappingURL=Bass.css.map */
