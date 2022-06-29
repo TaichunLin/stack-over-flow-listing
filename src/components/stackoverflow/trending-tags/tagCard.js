@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-import { addSearching } from "../../../features/stackoverflow/searchingSlice";
-
-// interface ReservationCardType {
-//   name: string;
-//   index: number;
-// }
+import {
+  addSearching,
+  addSearchingRefValue,
+} from "../../../features/stackoverflow/searchingSlice";
 
 function TagCard({ name, className, setSearchingInput }) {
   const dispatch = useDispatch();
@@ -15,6 +13,7 @@ function TagCard({ name, className, setSearchingInput }) {
       className={className}
       onClick={() => {
         dispatch(addSearching(name));
+        dispatch(addSearchingRefValue(name));
         setSearchingInput(name);
       }}
     >

@@ -7,7 +7,9 @@ const Title = styled.div`
 `;
 
 export const Question = (props) => {
-  console.log("props", props);
+  {
+    console.log(props);
+  }
   return (
     <div className="questionCard">
       {" "}
@@ -36,7 +38,7 @@ export const Question = (props) => {
             <div
               className={
                 `${props.question.answer_count}` > 0
-                  ? `${props.question.accepted}` > 0
+                  ? `${props.question.accepted}` === "true"
                     ? "questionCard__item_count"
                     : "questionCard__item_count-border"
                   : ""

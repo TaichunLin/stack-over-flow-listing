@@ -3,31 +3,28 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 export default function useQuestionSearch(url, pagesize, page) {
-  url = "http://localhost:8000/questions";
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [questions, setQuestions] = useState([]);
   const [hasMore, setHasMore] = useState(false);
   const SearchState = useSelector((state) => state.searching.refValue);
+  // const SearchState = useSelector((state) => state.searching.value);
+  console.log("SearchState", SearchState);
   useEffect(() => {
     setQuestions([]);
-    console.log("useQuestionSearch:清空上個搜尋");
   }, [SearchState]);
 
   useEffect(() => {
-    console.log("useQuestionSearch:fetch data & infinite searching");
     setLoading(true);
     setError(false);
     let cancel;
     axios({
       method: "GET",
-      url: url,
-      // params: { tagged: SearchState, page: page, pagesize: pagesize },
+      url: url + `&tagged=${SearchState}`,
+      params: { page: page, pagesize: pagesize },
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
     })
       .then((res) => {
-        console.log("!!!!!!!!!!!", res.data);
-
         setQuestions((prevQuestions) => {
           return [
             ...new Set([
@@ -43,13 +40,13 @@ export default function useQuestionSearch(url, pagesize, page) {
                 answer_count: item.answer_count,
                 view_count: item.view_count,
                 accepted: item.is_answered,
+                tags: item.tags,
               })),
             ]),
           ];
         });
         setHasMore(res.data.items.length > 0);
         setLoading(false);
-        console.log("questions in hook", questions);
       })
       .catch((e) => {
         if (axios.isCancel(e)) return;

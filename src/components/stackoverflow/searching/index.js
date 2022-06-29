@@ -10,18 +10,16 @@ import {
 import { ReactComponent as LoadingIcon } from "../../../../src/img/loading.svg";
 import TagCard from "../trending-tags/tagCard";
 
-//searchinput store到 searchState
-
 export const Seaching = () => {
-  // const base = "https://api.stackexchange.com";
-  // const pathURL = "/2.3/tags?order=desc&sort=popular&site=stackoverflow";
+  const base = "https://api.stackexchange.com";
+  const pathURL = "/2.3/tags?order=desc&sort=popular&site=stackoverflow";
   const tagsState = useSelector((state) => state.tags.value);
   const inputSearchRef = useRef(null);
   const [searchingInput, setSearchingInput] = useState(tagsState[0]);
 
   const { tags, loading, error } = useTagSearch(
     searchingInput,
-    "http://localhost:8001/tags",
+    base + pathURL,
     10,
     "!T.BkwE7kN)xmhL)Xnz"
   );
@@ -30,9 +28,9 @@ export const Seaching = () => {
 
   const handleSearch = () => {
     if (searchingInput === "") return;
+    dispatch(addSearchingRefValue(inputSearchRef.current.value));
     dispatch(addSearching(searchingInput));
     dispatch(addPage(1));
-    dispatch(addSearchingRefValue(inputSearchRef.current.value));
   };
 
   const handleTagSearch = (e) => {
