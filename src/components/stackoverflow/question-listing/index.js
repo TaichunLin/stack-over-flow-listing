@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRef } from "react";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
@@ -32,20 +32,15 @@ export const QuestionListing = () => {
           console.log("a-PageState", PageState);
           dispatch(addPage(PageState + 1));
           console.log("b-PageState", PageState);
-          // console.log("a-prevPage", prevPage);
-          // dispatch(addPage((prevPage) => prevPage + 1));
-          // console.log("b-prevPage", prevPage);
         }
       });
       if (node) observer.current.observe(node);
     },
-    [loading, hasMore]
+    [loading, hasMore, PageState, dispatch]
   );
 
-  console.log("questions???:", questions);
   return (
     <div>
-      Question
       <div>
         <div>
           {questions &&

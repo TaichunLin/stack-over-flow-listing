@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// export interface ReservationsState {
-//   value: string[];
-// } ->
-
 const initialState = {
   value: ["python"],
   refValue: ["python"],

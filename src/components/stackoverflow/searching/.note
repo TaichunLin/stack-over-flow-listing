@@ -1,6 +1,0 @@
-Searching
-
-1. The search will apply searching to trending tags.
-2. The search bar is located at the top of the page, even when the list is scrolling.
-3. Search is performed when the keyword is typed, trending tags and listing shall update
-   accordingly. [redux]

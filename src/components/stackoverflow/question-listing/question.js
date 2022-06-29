@@ -1,8 +1,4 @@
-import React, { useState } from "react";
-import { useRef } from "react";
-import { useCallback } from "react";
-import { useSelector } from "react-redux";
-import useQuestionSearch from "../../../customhooks/useQuestionSearch";
+import React from "react";
 
 export const Question = (props) => {
   console.log("props", props);
@@ -11,11 +7,7 @@ export const Question = (props) => {
       {" "}
       <div>
         <div>
-          <a
-            href={props.question.link}
-            target="_blank"
-            rel={props.question.title}
-          >
+          <a href={props.question.link} target="_blank" rel="noreferrer">
             {props.question.title}
           </a>
         </div>

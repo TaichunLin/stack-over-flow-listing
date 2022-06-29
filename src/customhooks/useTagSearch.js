@@ -41,7 +41,7 @@ export default function useTagSearch(query, url, pagesize, filter) {
         setError(true);
       });
     return () => cancel();
-  }, [query]);
+  }, [query]); // eslint-disable-line react-hooks/exhaustive-deps
   console.log("tags in Slice", tags);
   return { loading, error, tags };
 }

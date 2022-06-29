@@ -1,24 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// interface Customer {
-//   id: string;
-//   name: string;
-//   food: string[];
-// }
-
-// interface AddFoodToCustomerPayload {
-//   food: string;
-//   id: string;
-// }
-
-// export interface CustomerState {
-//   value: Customer[];
-// }
-
-// const initialState: CustomerState = {
-//   value: [],
-// };
-
 const initialState = {
   value: ["javascript", "python", "java"],
 };

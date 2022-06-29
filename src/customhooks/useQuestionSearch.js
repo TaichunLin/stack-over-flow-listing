@@ -17,7 +17,6 @@ export default function useQuestionSearch(url, pagesize, page) {
       score: 0,
       answer_count: 2,
       view_count: 3,
-      tags: ["⛰", "🧘🏻‍♀️", "🤓"],
     },
   ]);
   const [hasMore, setHasMore] = useState(false);
@@ -43,21 +42,6 @@ export default function useQuestionSearch(url, pagesize, page) {
 
         setQuestions((prevQuestions) => {
           return [
-            // ...new Set([
-            //   ...prevQuestions,
-            //   ...res.data.map((item) => ({
-            //     owner_link: item.owner.link,
-            //     account_id: item.owner.account_id,
-            //     display_name: item.owner.display_name,
-            //     profile_image: item.owner.profile_image,
-            //     title: item.title,
-            //     link: item.link,
-            //     score: item.score,
-            //     answer_count: item.answer_count,
-            //     view_count: item.view_count,
-            //     tags: item.tags,
-            //   })),
-            // ]),
             ...new Set([
               ...prevQuestions,
               ...res.data.items.map((item) => ({
@@ -70,7 +54,6 @@ export default function useQuestionSearch(url, pagesize, page) {
                 score: item.score,
                 answer_count: item.answer_count,
                 view_count: item.view_count,
-                tags: item.tags,
               })),
             ]),
           ];
@@ -84,7 +67,7 @@ export default function useQuestionSearch(url, pagesize, page) {
         setError(true);
       });
     return () => cancel();
-  }, [SearchState, page]);
+  }, [SearchState, page]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return { loading, error, questions, hasMore };
 }

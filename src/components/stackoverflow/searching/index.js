@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import useTagSearch from "../../../customhooks/useTagSearch";
@@ -8,15 +8,13 @@ import {
   addSearchingRefValue,
 } from "../../../features/stackoverflow/searchingSlice";
 
-import { Question } from "../question-listing/question";
-import { TrendingTags } from "../trending-tags";
 import TagCard from "../trending-tags/tagCard";
 
 //searchinput store到 searchState
 
 export const Seaching = () => {
-  const base = "https://api.stackexchange.com";
-  const pathURL = "/2.3/tags?order=desc&sort=popular&site=stackoverflow";
+  // const base = "https://api.stackexchange.com";
+  // const pathURL = "/2.3/tags?order=desc&sort=popular&site=stackoverflow";
   const tagsState = useSelector((state) => state.tags.value);
   const inputSearchRef = useRef(null);
   const [searchingInput, setSearchingInput] = useState(tagsState[0]);
@@ -31,7 +29,7 @@ export const Seaching = () => {
   const dispatch = useDispatch();
 
   const handleSearch = () => {
-    if (searchingInput == "") return;
+    if (searchingInput === "") return;
     dispatch(addSearching(searchingInput));
     dispatch(addPage(1));
     dispatch(addSearchingRefValue(inputSearchRef.current.value));
