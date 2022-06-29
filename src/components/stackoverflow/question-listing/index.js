@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import useQuestionSearch from "../../../customhooks/useQuestionSearch";
 import { addPage } from "../../../features/stackoverflow/searchingSlice";
 import { Question } from "./question";
+import { ReactComponent as LoadingIcon } from "../../../../src/img/loading.svg";
 
 export const QuestionListing = () => {
   const base = "https://api.stackexchange.com";
@@ -40,9 +41,11 @@ export const QuestionListing = () => {
   );
 
   return (
-    <div>
-      <div>
-        <div>
+    <div className="questionListing">
+      <div className="questionListing__container">
+        <div className={loading && "questionListing__loading"}>
+          <div className="loading">{loading && <LoadingIcon />}</div>
+          <div>{error && "Error"}</div>
           {questions &&
             questions.map((question, index) => {
               if (questions.length === index + 1) {
@@ -59,11 +62,7 @@ export const QuestionListing = () => {
                 );
               }
             })}
-          <div>
-            hasMore:{hasMore}:{hasMore || "it's the end"}
-          </div>
-          <div>{loading && "Loading..."}</div>
-          <div>{error && "Error"}</div>
+          <div>{loading || hasMore || "it's the end"}</div>
         </div>
       </div>
     </div>

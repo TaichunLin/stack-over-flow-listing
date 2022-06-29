@@ -11,9 +11,9 @@ $phoneWidthNew: 414px
 $padBottomWidth: 80px
 $phoneBottomWidth: 60px
 
-$colorPrimary: #5c892d
+$colorPrimary: #357f21
 $colorSecondary: #b7d8e3
-$colorThirdary: #d5e8c0
+$colorThirdary: #994242
 $colorFourthdary: #333
 $colorFifthdary: #919191
 $colorSixthdary: #9fb687
@@ -50,6 +50,11 @@ $fontFamilyPrimary: "Noto Sans TC"
 @mixin phoneNew
   @media screen and (max-width: $phoneWidthNew)
     @content
+
+  *
+    margin: 0
+    padding: 0
+    box-sizing: border-box
 
 html
   font-size: 14px
@@ -123,16 +128,118 @@ h6
   &-yellow
     color: $colorYellow
 
+@keyframes rotate
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
 .trendingTags
   &__container
     display: block
+    width: 100%
+    height: 120px
+    h4
+      padding-bottom: 0.1em
   &__cardWrapper
     display: flex
     flex-direction: row
+  &__cards
+    display: flex
+    flex-direction: row
+    &-hidden
+      visibility: hidden
   &__card
-    margin: 1rem
-    width: 10em
+    margin: 0 0.5em
+    padding: 0 0.4em
     border: 2px solid $colorSecondary
-    border-radius: 5px
+    border-radius: 10px
+    cursor: pointer
+    &:hover
+      background: $colorSecondary
     &--focus
       background: $colorSecondary
+  &__loading
+    width: 100%
+    svg
+      display: flex
+      align-items: flex-start
+      height: 25px
+      width: 25px
+      animation: rotate infinite 0.5s ease-in-out
+
+.App
+  &__container
+    display: flex
+    flex-direction: column
+    max-width: 70rem
+    margin: 5rem auto
+
+.search
+  &__container
+    width: 100%
+    padding: 1rem 0
+  &__input_container
+    display: flex
+    border: 3px solid $colorSecondary
+    border-radius: 10px
+    input
+      width: 100%
+      border-color: transparent
+      border-radius: 10px 0px 0px 10px
+      padding: 0.5rem
+    button
+      width: 10%
+      border-color: transparent
+      background: $colorSecondary
+      padding: 0.5rem
+      cursor: pointer
+
+.questionListing
+  a
+    font-size: 1.2rem
+    text-decoration: none
+    color: $colorBlack
+    &:hover
+      color: $colorDark
+  &__loading
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 2rem
+    svg
+      animation: rotate infinite 0.5s ease-in-out
+
+.questionCard
+  &__items
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+  &__item
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: $colorGray
+    height: fit-content
+    width: 100%
+    &_count
+      color: $colorNone
+      background: $colorPrimary
+      text-align: center
+      width: 4rem
+      &-border
+        color: $colorPrimary
+        border: 2px solid $colorPrimary
+        text-align: center
+        width: 4rem
+    &_score
+      &-red
+        color: #c11e16
+    img
+      border-radius: 100%
+      height: "100px"
+      width: "100px"
+    a
+      font-size: 1rem

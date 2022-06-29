@@ -7,7 +7,7 @@ import {
   addSearching,
   addSearchingRefValue,
 } from "../../../features/stackoverflow/searchingSlice";
-
+import { ReactComponent as LoadingIcon } from "../../../../src/img/loading.svg";
 import TagCard from "../trending-tags/tagCard";
 
 //searchinput store到 searchState
@@ -41,49 +41,59 @@ export const Seaching = () => {
   };
 
   return (
-    <div>
-      <div>
-        <input
-          type="text"
-          value={searchingInput}
-          placeholder="Tag"
-          onChange={handleTagSearch}
-          ref={inputSearchRef}
-        />
-        <button type="button" onClick={handleSearch}>
-          search
-        </button>
+    <div className="search">
+      <div className="search__container">
+        <div className="search__input_container">
+          <input
+            type="text"
+            value={searchingInput}
+            placeholder="Tag"
+            onChange={handleTagSearch}
+            ref={inputSearchRef}
+          />
+          <button type="button" onClick={handleSearch}>
+            Search
+          </button>
+        </div>
       </div>
       <div className="trendingTags">
         <div className="trendingTags__container">
           <div>
-            <h5 className="">TrendingTags</h5>
+            <h4>Trending</h4>
           </div>
           <div className="trendingTags__cardWrapper">
-            {tags.map((tag, index) => {
-              if (index === 0) {
-                return (
-                  <TagCard
-                    name={tag}
-                    key={index}
-                    className="trendingTags__card trendingTags__card--focus"
-                  />
-                );
-              } else {
-                return (
-                  <TagCard
-                    name={tag}
-                    key={index}
-                    className="trendingTags__card"
-                  />
-                );
+            <div
+              className={
+                loading ? "trendingTags__loading" : "trendingTags__cards"
               }
-            })}
+            >
+              <div className="">{loading && <LoadingIcon />}</div>
+              <div>{error && `Error:${error}`}</div>
+              {tags.map((tag, index) => {
+                if (index === 0) {
+                  return (
+                    <TagCard
+                      name={tag}
+                      key={index}
+                      className="trendingTags__card trendingTags__card--focus"
+                      setSearchingInput={setSearchingInput}
+                    />
+                  );
+                } else {
+                  return (
+                    <TagCard
+                      name={tag}
+                      key={index}
+                      className="trendingTags__card"
+                      setSearchingInput={setSearchingInput}
+                    />
+                  );
+                }
+              })}
+            </div>
           </div>
         </div>
       </div>
-      <div>{loading && "LOADING TAGS..."}</div>
-      <div>{error && `Error:${error}`}</div>
     </div>
   );
 };

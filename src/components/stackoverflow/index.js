@@ -6,10 +6,8 @@ import "../../assets/styles/Bass.sass";
 
 export const StackOverFlow = () => {
   return (
-    <div>
-      StackOverFlow
+    <div className="App__container">
       <Seaching />
-      <hr />
       <QuestionListing />
     </div>
   );

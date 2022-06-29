@@ -1,29 +1,70 @@
 import React from "react";
+import styled from "styled-components";
+
+const Title = styled.div`
+  color: #994242;
+  margin-top: 1rem;
+`;
 
 export const Question = (props) => {
   console.log("props", props);
   return (
-    <div className="Question">
+    <div className="questionCard">
       {" "}
-      <div>
+      <div className="questionCard">
         <div>
           <a href={props.question.link} target="_blank" rel="noreferrer">
             {props.question.title}
           </a>
         </div>
-        <p>score:{props.question.score}</p>
-        <p>answer:{props.question.answer_count}</p>
-        <p>view_count:{props.question.view_count}</p>
-        <div style={{ height: "100px", width: "100px" }}>
-          <img
-            alt={`${props.question.display_name}'s profile`}
-            src={props.question.profile_image}
-            width="100"
-            height="100"
-          />
+        <div className="questionCard__items">
+          <div className="questionCard__item">
+            <Title>Score</Title>
+
+            <div
+              className={
+                `${props.question.score}` < 0
+                  ? "questionCard__item_score-red"
+                  : "questionCard__item_score"
+              }
+            >
+              {props.question.score}
+            </div>
+          </div>
+          <div className="questionCard__item">
+            <Title>Answers</Title>
+            <div
+              className={
+                `${props.question.answer_count}` > 0
+                  ? `${props.question.accepted}` > 0
+                    ? "questionCard__item_count"
+                    : "questionCard__item_count-border"
+                  : ""
+              }
+            >
+              {props.question.answer_count}
+            </div>
+          </div>
+          <div className="questionCard__item">
+            <Title>Viewed</Title>
+            <div>{props.question.view_count}</div>
+          </div>
+          <div className="questionCard__item">
+            <img
+              alt={`${props.question.display_name}'s profile`}
+              src={props.question.profile_image}
+              width="100"
+              height="100"
+            />
+            <a
+              href={props.question.owner_link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {props.question.display_name}
+            </a>
+          </div>
         </div>
-        <p>{props.question.display_name}</p>
-        <p>{props.question.owner_link}</p>
       </div>
       <hr />
     </div>

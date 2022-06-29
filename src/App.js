@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./App.css";
-
 import { StackOverFlow } from "./components/stackoverflow";
 
 function App() {

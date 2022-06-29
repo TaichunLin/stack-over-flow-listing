@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addSearching } from "../../../features/stackoverflow/searchingSlice";
 
@@ -7,13 +7,15 @@ import { addSearching } from "../../../features/stackoverflow/searchingSlice";
 //   index: number;
 // }
 
-function TagCard({ name, className }) {
+function TagCard({ name, className, setSearchingInput }) {
   const dispatch = useDispatch();
+
   return (
     <div
       className={className}
       onClick={() => {
         dispatch(addSearching(name));
+        setSearchingInput(name);
       }}
     >
       <p>{name}</p>

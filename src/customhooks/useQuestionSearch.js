@@ -6,19 +6,7 @@ export default function useQuestionSearch(url, pagesize, page) {
   url = "http://localhost:8000/questions";
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [questions, setQuestions] = useState([
-    {
-      owner_link: "item.owner.link",
-      account_id: 11,
-      display_name: "item.owner.display_name",
-      profile_image: "item.owner.profile_image",
-      title: "item.title",
-      link: "item.link",
-      score: 0,
-      answer_count: 2,
-      view_count: 3,
-    },
-  ]);
+  const [questions, setQuestions] = useState([]);
   const [hasMore, setHasMore] = useState(false);
   const SearchState = useSelector((state) => state.searching.refValue);
   useEffect(() => {
@@ -54,6 +42,7 @@ export default function useQuestionSearch(url, pagesize, page) {
                 score: item.score,
                 answer_count: item.answer_count,
                 view_count: item.view_count,
+                accepted: item.is_answered,
               })),
             ]),
           ];
