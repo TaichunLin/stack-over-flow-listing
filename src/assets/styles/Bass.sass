@@ -125,8 +125,15 @@ h6
 
 .search
   &__container
-    width: 100%
+    width: $padWidth
     padding: 1rem 0
+    position: fixed
+    top: 0
+    @include phone
+      width: $phoneWidth
+    @include phoneNew
+      width: $phoneWidthNew
+
   &__input_container
     display: flex
     border: 3px solid $colorSecondary
@@ -161,6 +168,7 @@ h6
 
 .questionCard
   &__items
+    width: 100%
     display: flex
     flex-direction: row
     justify-content: space-around
@@ -174,6 +182,7 @@ h6
     &_count
       color: $colorNone
       background: $colorPrimary
+      border: 2px solid $colorPrimary
       text-align: center
       width: 4rem
       &-border

@@ -7,8 +7,8 @@ export default function useQuestionSearch(url, pagesize, page) {
   const [error, setError] = useState(false);
   const [questions, setQuestions] = useState([]);
   const [hasMore, setHasMore] = useState(false);
-  const SearchState = useSelector((state) => state.searching.refValue);
-  // const SearchState = useSelector((state) => state.searching.value);
+  // const SearchState = useSelector((state) => state.searching.refValue);
+  const SearchState = useSelector((state) => state.searching.value);
   console.log("SearchState", SearchState);
   useEffect(() => {
     setQuestions([]);
