@@ -7,9 +7,6 @@ const Title = styled.div`
 `;
 
 export const Question = (props) => {
-  {
-    console.log(props);
-  }
   return (
     <div className="questionCard">
       {" "}
