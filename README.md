@@ -4,5 +4,10 @@
 
 
 In the project directory, you can run:
-
 ### `npm start`
+
+
+##`React`
+##`Redux Toolkit`
+##`BEM`
+##`custom hooks`
