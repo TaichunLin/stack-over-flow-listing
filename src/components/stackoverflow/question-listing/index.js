@@ -39,7 +39,7 @@ export const QuestionListing = () => {
   return (
     <div className="questionListing">
       <div className="questionListing__container">
-        <div className={loading && "questionListing__loading"}>
+        <div className={loading ? "questionListing__loading" : ""}>
           <div className="loading">{loading && <LoadingIcon />}</div>
           <div>{error && "Error"}</div>
           {questions &&

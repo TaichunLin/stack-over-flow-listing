@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: [],
-  refValue: [],
+  value: [""],
+  refValue: [""],
   page: 1,
 };
 

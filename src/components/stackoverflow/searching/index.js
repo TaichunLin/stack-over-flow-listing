@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+
 import useTagSearch from "../../../customhooks/useTagSearch";
 import {
   addPage,
@@ -9,13 +9,41 @@ import {
 } from "../../../features/stackoverflow/searchingSlice";
 import { ReactComponent as LoadingIcon } from "../../../../src/img/loading.svg";
 import TagCard from "../trending-tags/tagCard";
+import axios from "axios";
 
 export const Seaching = () => {
   const base = "https://api.stackexchange.com";
   const pathURL = "/2.3/tags?order=desc&sort=popular&site=stackoverflow";
-  const tagsState = useSelector((state) => state.tags.value);
+  const [searchingInput, setSearchingInput] = useState("");
+  const [initloading, setLoading] = useState(true);
+  const [initerror, setError] = useState(false);
   const inputSearchRef = useRef(null);
-  const [searchingInput, setSearchingInput] = useState(tagsState[0]);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setLoading(true);
+    setError(false);
+    const fetchData = async () => {
+      const res = await axios
+        .get(
+          base +
+            "/2.3/tags?page=1&pagesize=10&order=desc&sort=popular&site=stackoverflow&filter=!T.BkwE7kN)xmhL)Xnz"
+        )
+        .then((res) => {
+          const name = res.data.items[0].name;
+          dispatch(addSearching(name));
+          dispatch(addSearchingRefValue(name));
+          setLoading(false);
+        })
+        .catch((e) => {
+          if (axios.isCancel(e)) return;
+          setError(true);
+        });
+      return res, initloading, initerror;
+    };
+    fetchData();
+  }, []);
 
   const { tags, loading, error } = useTagSearch(
     searchingInput,
@@ -23,8 +51,6 @@ export const Seaching = () => {
     10,
     "!T.BkwE7kN)xmhL)Xnz"
   );
-
-  const dispatch = useDispatch();
 
   const handleSearch = () => {
     if (searchingInput === "") return;
@@ -37,6 +63,9 @@ export const Seaching = () => {
     setSearchingInput(e.target.value);
     dispatch(addSearching(searchingInput));
   };
+
+  if (initloading) return <h1> LOADING...</h1>;
+  if (initerror) console.log(error);
 
   return (
     <div className="search">
