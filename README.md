@@ -11,7 +11,7 @@ redesign the StackOverflow listing with [the StackExchange API](https://api.stac
 ## Trending Tags
 
 1. Display top 10 trending tags
-2. Data can be found using [the StackExchange tags API] (https://api.stackexchange.com/docs/tags)
+2. Data can be found using [the StackExchange tags API](https://api.stackexchange.com/docs/tags)
 3. Default selected the first tag
 4. Use a round corner for tag border
 
