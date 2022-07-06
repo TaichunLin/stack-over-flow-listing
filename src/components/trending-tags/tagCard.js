@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import {
   addSearching,
   addSearchingRefValue,
-} from "../../../features/stackoverflow/searchingSlice";
+} from "../../features/stackoverflow/searchingSlice";
 
 function TagCard({ name, className, setSearchingInput }) {
   const dispatch = useDispatch();

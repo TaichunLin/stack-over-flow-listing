@@ -9,10 +9,11 @@ export default function useQuestionSearch(url, pagesize, page) {
   const [hasMore, setHasMore] = useState(false);
 
   const SearchState = useSelector((state) => state.searching.value);
+  const SearchStateRef = useSelector((state) => state.searching.refValue);
 
   useEffect(() => {
     setQuestions([]);
-  }, [SearchState]);
+  }, [SearchState, SearchStateRef]);
 
   useEffect(() => {
     setLoading(true);
@@ -20,7 +21,7 @@ export default function useQuestionSearch(url, pagesize, page) {
     let cancel;
     axios({
       method: "GET",
-      url: url + `&tagged=${SearchState}`,
+      url: url + `&tagged=${SearchState[0]}`,
       params: { page: page, pagesize: pagesize },
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
     })
@@ -53,7 +54,7 @@ export default function useQuestionSearch(url, pagesize, page) {
         setError(true);
       });
     return () => cancel();
-  }, [SearchState, page]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [SearchState, page, SearchStateRef]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return { loading, error, questions, hasMore };
 }

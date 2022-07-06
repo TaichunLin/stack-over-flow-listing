@@ -1,11 +1,15 @@
 import React from "react";
-
-import { StackOverFlow } from "./components/stackoverflow";
+import { QuestionListing } from "./components/question-listing";
+import { Seaching } from "./components/searching";
+import "./assets/styles/Bass.sass";
 
 function App() {
   return (
     <div className="App">
-      <StackOverFlow />
+      <div className="App__container">
+        <Seaching />
+        <QuestionListing />
+      </div>
     </div>
   );
 }

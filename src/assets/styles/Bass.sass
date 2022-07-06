@@ -18,6 +18,8 @@ $colorNone: #fff
 $colorRed: #e24242
 $colorDark: #333333
 $colorBlack: #0A0A14
+$colorSkeleton: #cecdcd
+$colorSkeletonBG: #eeeded
 
 $fontFamilyPrimary: "Noto Sans TC"
 
@@ -82,6 +84,16 @@ h6
   100%
     transform: rotate(360deg)
 
+@keyframes skeleton
+  to
+    opacity: 0.5
+
+.loader
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+
 .trendingTags
   &__container
     display: block
@@ -95,8 +107,6 @@ h6
   &__cards
     display: flex
     flex-direction: row
-    &-hidden
-      visibility: hidden
   &__card
     margin: 0 0.5em
     padding: 0 0.4em
@@ -107,14 +117,15 @@ h6
       background: $colorSecondary
     &--focus
       background: $colorSecondary
-  &__loading
-    width: 100%
-    svg
-      display: flex
-      align-items: flex-start
-      height: 25px
-      width: 25px
-      animation: rotate infinite 0.5s ease-in-out
+  &__cardSK
+    width: 60px
+    height: 50px
+    margin: 0 0.5em
+    padding: 0 0.4em
+    border: 2px solid $colorSecondary
+    background: $colorSecondary
+    border-radius: 10px
+    animation: skeleton 1s ease infinite alternate
 
 .App
   &__container
@@ -157,14 +168,6 @@ h6
     color: $colorBlack
     &:hover
       color: $colorDark
-  &__loading
-    width: 100%
-    display: flex
-    align-items: center
-    justify-content: center
-    font-size: 2rem
-    svg
-      animation: rotate infinite 0.5s ease-in-out
 
 .questionCard
   &__items
@@ -199,3 +202,28 @@ h6
       width: "100px"
     a
       font-size: 1rem
+
+.quesSkCard
+  width: 100%
+  animation: skeleton 1s ease infinite alternate
+  background: $colorSkeletonBG
+  &__title
+    width: 80%
+    height: 24px
+    background: $colorSkeleton
+  &__items
+    width: 100%
+    height: 120px
+    margin-top: 20px
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+  &__item
+    height: 50px
+    width: 100px
+    background: $colorSkeleton
+  &__img
+    background: $colorSkeleton
+    border-radius: 50%
+    height: 100px
+    width: 100px

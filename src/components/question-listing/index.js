@@ -3,10 +3,11 @@ import { useRef } from "react";
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import useQuestionSearch from "../../../customhooks/useQuestionSearch";
-import { addPage } from "../../../features/stackoverflow/searchingSlice";
+import useQuestionSearch from "../../customhooks/useQuestionSearch";
+import { addPage } from "../../features/stackoverflow/searchingSlice";
 import { Question } from "./question";
-import { ReactComponent as LoadingIcon } from "../../../../src/img/loading.svg";
+
+import Loading from "../Loading/Loading";
 
 export const QuestionListing = () => {
   const base = "https://api.stackexchange.com";
@@ -39,27 +40,32 @@ export const QuestionListing = () => {
   return (
     <div className="questionListing">
       <div className="questionListing__container">
-        <div className={loading ? "questionListing__loading" : ""}>
-          <div className="loading">{loading && <LoadingIcon />}</div>
-          <div>{error && "Error"}</div>
-          {questions &&
-            questions.map((question, index) => {
-              if (questions.length === index + 1) {
-                return (
-                  <div ref={lastQuestionElementRef} key={index}>
-                    <Question question={question} />
-                  </div>
-                );
-              } else {
-                return (
-                  <div key={index}>
-                    <Question question={question} />
-                  </div>
-                );
-              }
-            })}
-          <div>{loading || hasMore || "it's the end"}</div>
-        </div>
+        {loading ? (
+          <div>
+            {error && "Error"}
+            <Loading type="questions" />
+          </div>
+        ) : (
+          <div className="questionListing__loading">
+            {questions &&
+              questions.map((question, index) => {
+                if (questions.length === index + 1) {
+                  return (
+                    <div ref={lastQuestionElementRef} key={index}>
+                      <Question question={question} />
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div key={index}>
+                      <Question question={question} />
+                    </div>
+                  );
+                }
+              })}
+            <div>{loading || hasMore || "No more data."}</div>
+          </div>
+        )}
       </div>
     </div>
   );
