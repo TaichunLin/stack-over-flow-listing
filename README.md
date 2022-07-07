@@ -6,7 +6,7 @@
 ## Using the HTML, CSS, React.js to create a simplified listing of StackOverflow tags
 and questions. 
 
-redesign the StackOverflow listing with [the StackExchange API](https://api.stackexchange.com/docs)and show loading spinner when fetching data
+redesign the StackOverflow listing with [the StackExchange API](https://api.stackexchange.com/docs) and show loading spinner when fetching data
 
 ## Trending Tags
 
