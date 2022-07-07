@@ -3,7 +3,7 @@
 [Leah- stack-over-flow-listing](https://taichunlin.github.io/stack-over-flow-listing/)
 
 
-## Using the HTML, CSS, React.js/Vue.js to create a simplified listing of StackOverflow tags
+## Using the HTML, CSS, React.js to create a simplified listing of StackOverflow tags
 and questions. 
 
 redesign the StackOverflow listing with [the StackExchange API](https://api.stackexchange.com/docs)and show loading spinner when fetching data
